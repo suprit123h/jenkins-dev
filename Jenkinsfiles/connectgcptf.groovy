@@ -1,14 +1,8 @@
 pipeline {
     agent any
-    
-    parameters{
-    	string(name: 'pipeline value', description: 'just checking the parameters option', defaultValue: 'NA')
-        string(name: 'opetions value', description: 'just checking the options', defaultValue: 'NA')
-	choice(name: 'pipeline choices', choices: ['first pipeline', 'second pipeline'], description: 'nothing to describe here' )
-    }
 
     environment{
-    	GCP_PROJECT_ID		= 'gcp'
+    	GCP_PROJECT_ID		= 'ssh-devops1-dev-2025'
     	// nothing to mention as of now
     }
 
@@ -20,13 +14,13 @@ pipeline {
                 script {
                     println('Hello This is the git passkey token name: "Surpass"')
 
-		    sh "pwd"
+		    sh "git clone https://github.com/suprit123h/gcp-ssh-2025-wisdom-dev.git"
 
-		    sh "python --version"
+		    sh "$(cd pwd)/infraGCP/terraform init"
 
-		    sh "kubectl"
+		    sh "$(cd pwd)/infraGCP/terraform plan"
 
-		    sh "gcloud version"
+		    //sh "gcloud version"
 		   }
 
                 }

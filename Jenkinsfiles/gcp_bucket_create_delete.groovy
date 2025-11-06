@@ -23,12 +23,9 @@ pipeline {
                     )
 				]) {
 					echo 'Hello This is the git passkey token name: "Surpass"'
-					// sh "cat $GOOGLE_APPLICATION_CREDENTIALS"
 
 					// Optionally, ensure the repo is checked out before pulling
 					checkout([$class: 'GitSCM', branches: [[name: '*/master']], userRemoteConfigs: [[url: 'https://github.com/suprit123h/gcp-ssh-2025-wisdom-dev.git']]])
-         // checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://github.com/suprit123h/jenkins-dev.git']]])
-
 					// git pull "https://github.com/suprit123h/gcp-ssh-2025-wisdom-dev.git"
 
 					sh '''

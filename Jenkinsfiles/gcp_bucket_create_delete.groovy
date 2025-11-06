@@ -38,17 +38,17 @@ pipeline {
 						ls
                                                 mv ${GOOGLE_APPLICATION_CREDENTIALS} ssh-devops1-dev-2025.json
                                                 rm -rf *.tfstate
-						terraform init
+					                            terraform init
                                                 echo "=================================================="
-						terraform plan
+		                                        terraform plan
                                                 echo "=================================================="
                                                 terraform apply -auto-approve
-	                                        echo "=================================================="
-					        sleep 30
-	                                        echo "=================================================="
-						terraform plan -destroy
+	                                            echo "=================================================="
+					                            sleep 30
+	                                            echo "=================================================="
+					                            terraform plan -destroy
                                                 echo "=================================================="
-						terraform destroy -auto-approve -no-color
+					                            terraform destroy -auto-approve -no-color
 					'''
 				}
 			}

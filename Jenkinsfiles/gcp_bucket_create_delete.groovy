@@ -3,15 +3,14 @@ pipeline {
 
     environment{
     	GCP_PROJECT_ID		= 'ssh-devops1-dev-2025'
-    	// nothing to mention as of now
     }
 
 
     stages {
 	    
         stage('Hello This is the git passkey token name: "Surpass" ') {
-	steps {
-		dir("infraGCP") {
+	    steps {
+		  dir("infraGCP") {
 			script {
 				withCredentials([
 					file(
